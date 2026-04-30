@@ -231,11 +231,12 @@ def main():
         print()
 
     print("=" * 60)
-    print(f"  Final grade:       {final_grade}")    
+    if errors:
+        print("  NOT GRADEABLE — fill in your website_under_test first!")
+    else:
+        print(f"  Final grade:       {final_grade}")
     print("=" * 60)
     print()
-    if errors:
-        sys.exit(1)
 
 
 if __name__ == "__main__":
