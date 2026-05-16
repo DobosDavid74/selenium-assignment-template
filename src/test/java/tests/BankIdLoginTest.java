@@ -4,6 +4,7 @@ import base.BaseTest;
 import org.junit.jupiter.api.Test;
 import pages.BankIdLoginPage;
 import pages.BankIdPasswordPage;
+import utils.ConfigReader;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -15,7 +16,7 @@ public class BankIdLoginTest extends BaseTest {
         BankIdPasswordPage passwordPage = new BankIdPasswordPage(driver);
 
         loginPage.open();
-        loginPage.selectDemoAccount("JanN");
+        loginPage.selectDemoAccount(ConfigReader.get("demo.account"));
 
         assertTrue(passwordPage.isPasswordInputVisible());
     }
